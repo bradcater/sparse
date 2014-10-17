@@ -22,4 +22,12 @@ describe SpArray do
     sa = SpArray.new(a, :sparse_value => new_sparse_value)
     sa.to_a.should eql(a)
   end
+
+  it "should test equality correctly" do
+    a = DEFAULT_ARRAY.dup
+    sa_0 = SpArray.new(a)
+    sa_1 = SpArray.new(a)
+    (sa_0 == sa_1).should eql(true)
+    (sa_0.eql?(sa_1)).should eql(true)
+  end
 end

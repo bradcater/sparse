@@ -5,6 +5,7 @@ class SpArray
   def eql?(o)
     self.class == o.class && [:data, :size, :sparse_value].all?{|attr| self.send(attr) == o.send(attr)}
   end
+  alias_method :==, :eql?
   def check_rep
     ok = true
     if self.data.size > 0
